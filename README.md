@@ -1,6 +1,6 @@
 # Nadir Python SDK
 
-Official Python client for the [Nadir](https://getnadir.dev) LLM router — intelligent model routing that cuts API costs 30-60%.
+Official Python client for the [Nadir](https://getnadir.com) LLM router. Nadir picks the right model and effort for each request. Docs: [getnadir.com/docs](https://getnadir.com/docs).
 
 ## Installation
 
@@ -23,7 +23,7 @@ print(response.choices[0].message.content)
 
 # See which model was selected and why
 print(response.nadir_metadata.tier)             # "simple"
-print(response.nadir_metadata.selected_model)   # "gpt-4o-mini"
+print(response.nadir_metadata.selected_model)   # "claude-haiku-4-5"
 print(response.nadir_metadata.complexity_score)  # 0.12
 ```
 
@@ -36,13 +36,6 @@ stream = client.chat.completions.create(
 )
 for chunk in stream:
     print(chunk.choices[0].delta.content or "", end="", flush=True)
-```
-
-## Model Recommendation (no LLM call)
-
-```python
-rec = client.recommend("Explain quantum entanglement in detail")
-print(rec)  # {"recommended_model": "claude-sonnet-4-20250514", "complexity": ...}
 ```
 
 ## Async
@@ -78,7 +71,7 @@ response = client.chat.completions.create(
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `NADIR_API_KEY` | API key (fallback if not passed to constructor) | — |
-| `NADIR_BASE_URL` | API base URL | `https://api.getnadir.dev` |
+| `NADIR_BASE_URL` | API base URL | `https://api.getnadir.com` |
 
 ## OpenAI Drop-in Compatibility
 
@@ -88,7 +81,7 @@ Nadir's API is OpenAI-compatible. You can also use the OpenAI SDK directly:
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.getnadir.dev/v1",
+    base_url="https://api.getnadir.com/v1",
     api_key="ndr_...",
 )
 response = client.chat.completions.create(
@@ -97,4 +90,4 @@ response = client.chat.completions.create(
 )
 ```
 
-The Nadir SDK adds typed access to routing metadata, recommendations, smart export, and clustering that the OpenAI SDK can't reach.
+The Nadir SDK adds typed access to the routing metadata (tier, selected model, complexity score) that the OpenAI SDK can't reach.
