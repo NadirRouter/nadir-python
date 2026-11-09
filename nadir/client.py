@@ -36,7 +36,7 @@ import httpx
 from .errors import APIError, AuthenticationError, ConnectionError, NadirError, RateLimitError
 from .types import ChatCompletion, ChatCompletionChunk
 
-DEFAULT_BASE_URL = "https://api.getnadir.dev"
+DEFAULT_BASE_URL = "https://api.getnadir.com"
 
 
 # ---------------------------------------------------------------------------
@@ -360,7 +360,7 @@ class NadirClient:
         return {
             "Content-Type": "application/json",
             "X-API-Key": self._api_key,
-            "User-Agent": "nadir-python/0.1.0",
+            "User-Agent": "nadir-python/0.1.1",
         }
 
     def _get(self, path: str) -> Dict[str, Any]:

@@ -1,6 +1,6 @@
 """Nadir Python SDK — OpenAI-compatible client for the Nadir LLM router."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .client import NadirClient
 from .async_client import AsyncNadirClient
