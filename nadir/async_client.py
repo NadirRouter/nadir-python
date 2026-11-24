@@ -34,7 +34,7 @@ import httpx
 from .errors import APIError, AuthenticationError, ConnectionError, NadirError, RateLimitError
 from .types import ChatCompletion, ChatCompletionChunk
 
-DEFAULT_BASE_URL = "https://api.getnadir.dev"
+DEFAULT_BASE_URL = "https://api.getnadir.com"
 
 
 # ---------------------------------------------------------------------------
