@@ -14,7 +14,7 @@ from nadir.errors import NadirError, AuthenticationError, RateLimitError, APIErr
 
 def test_client_default_base_url():
     client = NadirClient(api_key="ndr_test")
-    assert client._base_url == "https://api.getnadir.dev"
+    assert client._base_url == "https://api.getnadir.com"
     client.close()
 
 
@@ -76,7 +76,7 @@ def test_client_headers():
 
 def test_async_client_default_base_url():
     client = AsyncNadirClient(api_key="ndr_test")
-    assert client._base_url == "https://api.getnadir.dev"
+    assert client._base_url == "https://api.getnadir.com"
 
 
 def test_async_client_namespaces():

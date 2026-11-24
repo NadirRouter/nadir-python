@@ -1,6 +1,6 @@
 # Nadir Python SDK
 
-Official Python client for the [Nadir](https://getnadir.dev) LLM router — intelligent model routing that cuts API costs 30-60%.
+Official Python client for [Nadir](https://getnadir.com/), the LLM router that picks the lowest-cost model expected to handle each request. Docs: [getnadir.com/docs](https://getnadir.com/docs/).
 
 ## Installation
 
@@ -78,7 +78,7 @@ response = client.chat.completions.create(
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `NADIR_API_KEY` | API key (fallback if not passed to constructor) | — |
-| `NADIR_BASE_URL` | API base URL | `https://api.getnadir.dev` |
+| `NADIR_BASE_URL` | API base URL | `https://api.getnadir.com` |
 
 ## OpenAI Drop-in Compatibility
 
@@ -88,7 +88,7 @@ Nadir's API is OpenAI-compatible. You can also use the OpenAI SDK directly:
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.getnadir.dev/v1",
+    base_url="https://api.getnadir.com/v1",
     api_key="ndr_...",
 )
 response = client.chat.completions.create(
