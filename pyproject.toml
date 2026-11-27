@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nadir-sdk"
-version = "0.1.0"
-description = "Python SDK for the Nadir LLM Router — intelligent model routing that cuts API costs 30-60%"
+version = "0.1.1"
+description = "Python SDK for the Nadir LLM router: picks the right model and effort for each request"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.9"
-authors = [{name = "Nadir", email = "support@getnadir.dev"}]
+authors = [{name = "Nadir", email = "info@getnadir.com"}]
 keywords = ["nadir", "llm", "router", "openai", "anthropic", "ai", "sdk"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -28,8 +28,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://getnadir.dev"
-Documentation = "https://docs.getnadir.dev"
+Homepage = "https://getnadir.com"
+Documentation = "https://getnadir.com/docs"
 Repository = "https://github.com/NadirRouter/nadir-python"
 Issues = "https://github.com/NadirRouter/nadir-python/issues"
 
